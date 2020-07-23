@@ -10,15 +10,25 @@ public class FizzBuzz {
         if(inputNumber % 3 == 0 && inputNumber % 5 == 0 && inputNumber % 7 == 0){
             return "FizzBuzzWhizz";
         }
+        String result = getReturnFromCombinationOfTwoNum(inputNumber);
+        if(result == null){
+            result = getReturnFromSimgleNum(inputNumber);
+        }
+        return result == null ? String.valueOf(inputNumber) : result;
+    }
+    public String getReturnFromCombinationOfTwoNum(int inputNumber){
         if(inputNumber % 3 == 0 && inputNumber % 5 == 0){
             return "FizzBuzz";
         }
         if(inputNumber % 3 == 0 && inputNumber % 7 == 0){
             return "FizzWhizz";
         }
-        if(inputNumber % 5 == 0 && inputNumber % 7 == 0){
+        if(inputNumber % 5 == 0 && inputNumber % 7 == 0) {
             return "BuzzWhizz";
         }
+        return null;
+    }
+    public String getReturnFromSimgleNum(int inputNumber){
         if(inputNumber % 3 == 0){
             return "Fizz";
         }
@@ -28,6 +38,6 @@ public class FizzBuzz {
         if(inputNumber % 7 == 0){
             return "Whizz";
         }
-        return String.valueOf(inputNumber);
+        return null;
     }
 }
