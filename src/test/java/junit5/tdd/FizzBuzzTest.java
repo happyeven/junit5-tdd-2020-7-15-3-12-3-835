@@ -15,7 +15,9 @@ public class FizzBuzzTest {
         //given
         FizzBuzz fizzBuzz = new FizzBuzz();
         int inputNumber = 1;
+        //when
         String result = fizzBuzz.play(inputNumber);
+        //then
         assertEquals("1",result);
     }
 }
