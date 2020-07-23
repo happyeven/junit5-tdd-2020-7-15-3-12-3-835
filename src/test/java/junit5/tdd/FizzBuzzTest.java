@@ -42,4 +42,5 @@ public class FizzBuzzTest {
         //then
         assertEquals("Buzz",result);
     }
+
 }
