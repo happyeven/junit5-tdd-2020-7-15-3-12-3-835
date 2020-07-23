@@ -1,5 +1,6 @@
 package junit5.tdd;
 
+
 /**
  * @Author ZHUDO2
  * @Date 7/23/2020 11:36 AM
@@ -7,37 +8,21 @@ package junit5.tdd;
  */
 public class FizzBuzz {
     public String play(int inputNumber){
-        if(inputNumber % 3 == 0 && inputNumber % 5 == 0 && inputNumber % 7 == 0){
-            return "FizzBuzzWhizz";
+        String result = "";
+        result = result + getFizzByNumber(inputNumber) + getBuzzByNumber(inputNumber) + getWhizzByNumber(inputNumber);
+        if("" .equals(result)){
+            return String.valueOf(inputNumber);
         }
-        String result = getReturnFromCombinationOfTwoNum(inputNumber);
-        if(result == null){
-            result = getReturnFromSimgleNum(inputNumber);
-        }
-        return result == null ? String.valueOf(inputNumber) : result;
+        return result;
     }
-    public String getReturnFromCombinationOfTwoNum(int inputNumber){
-        if(inputNumber % 3 == 0 && inputNumber % 5 == 0){
-            return "FizzBuzz";
-        }
-        if(inputNumber % 3 == 0 && inputNumber % 7 == 0){
-            return "FizzWhizz";
-        }
-        if(inputNumber % 5 == 0 && inputNumber % 7 == 0) {
-            return "BuzzWhizz";
-        }
-        return null;
+
+    public String getFizzByNumber(int inputNumber){
+        return inputNumber % 3 == 0 ? "Fizz" : "";
     }
-    public String getReturnFromSimgleNum(int inputNumber){
-        if(inputNumber % 3 == 0){
-            return "Fizz";
-        }
-        if(inputNumber % 5 == 0){
-            return "Buzz";
-        }
-        if(inputNumber % 7 == 0){
-            return "Whizz";
-        }
-        return null;
+    public String getBuzzByNumber(int inputNumber){
+        return inputNumber % 5 == 0 ? "Buzz" : "";
+    }
+    public String getWhizzByNumber(int inputNumber){
+        return inputNumber % 7 == 0 ? "Whizz" : "";
     }
 }
